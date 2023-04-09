@@ -16,6 +16,38 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "montserrat",
+    fontSize: 16,
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+      },
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          borderRadius: 0,
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        indicator: {
+          display: "none",
+        },
+      },
+    },
+    MuiTab: {
+      defaultProps: {
+        disableRipple: true,
+        opacity: 1.0,
+      },
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
+    },
   },
 });
 export default theme;
