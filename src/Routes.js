@@ -1,9 +1,12 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Switch } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
-import MainLayoutRoute from "./Components/RouteLayouts/MainLayoutRoute";
-//import pages
-import Main from "./Pages/Main";
+
+const MainLayoutRoute = lazy(() =>
+  import("./Components/RouteLayouts/MainLayoutRoute")
+);
+
+const Main = lazy(() => import("./Pages/Main"));
 
 const Routes = () => {
   return (

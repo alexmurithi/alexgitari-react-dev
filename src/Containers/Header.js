@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppBar, Toolbar, Box, Tabs } from "@mui/material";
+import { AppBar, Toolbar, Box, Tabs, Link } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import Image from "../Components/Image";
@@ -27,9 +27,11 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="fixed" color="transparent" elevation={0}>
+      <AppBar position="fixed" color="peach" elevation={0}>
         <Toolbar>
-          <Image src={Logo} width="inherit" alt="Alex Gitari" />
+          <Link href="/">
+            <Image src={Logo} width="inherit" alt="Alex Gitari" />
+          </Link>
 
           <Box sx={{ width: "100%" }}>
             <Tabs value={value} onChange={handleChange} centered>
@@ -58,4 +60,4 @@ const Header = () => {
     </>
   );
 };
-export default Header;
+export default React.memo(Header);

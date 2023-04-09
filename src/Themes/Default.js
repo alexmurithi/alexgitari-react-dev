@@ -13,10 +13,16 @@ const theme = createTheme({
     background: {
       default: "#F3D9DA",
     },
+    peach: {
+      main: "#F3D9DA",
+    },
   },
   typography: {
     fontFamily: "montserrat",
     fontSize: 16,
+    h1: {
+      fontSize: 64,
+    },
   },
   components: {
     MuiButton: {
@@ -27,6 +33,7 @@ const theme = createTheme({
         root: {
           textTransform: "none",
           borderRadius: 0,
+          fontWeight: "bold",
         },
       },
     },
