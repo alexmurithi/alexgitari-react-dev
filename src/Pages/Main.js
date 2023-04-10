@@ -6,6 +6,8 @@ import CodeIllustrator from "../Assets/Images/code-illustrator.svg";
 import { technologies } from "../Utils/Technologies";
 import { shuffleArray } from "../Utils/Arrays";
 
+import { Helmet } from "react-helmet-async";
+
 const Main = () => {
   const Hero = () => (
     <Box mt={6.75}>
@@ -56,8 +58,15 @@ const Main = () => {
 
   return (
     <Box>
+      <Helmet>
+        <title>Alex Gitari</title>
+        <meta
+          name="description"
+          content="Building robust & scalable digital products."
+        ></meta>
+      </Helmet>
       <Hero />
-      <Box sx={{ my: 1 }}>
+      <Box sx={{ mt: 4 }}>
         <Grid container spacing={1}>
           {shuffleArray(technologies).map((technology) => (
             <Grid item lg={2} key={technology.name}>
@@ -65,6 +74,7 @@ const Main = () => {
                 <Image
                   src={technology.src !== "" ? technology.src : "/"}
                   alt={technology.name}
+                  width={100}
                 />
               </Link>
             </Grid>
