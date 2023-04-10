@@ -49,7 +49,7 @@ const Main = () => {
             src={CodeIllustrator}
             alt="Code Illustrator"
             height="100%"
-            sx={{ objectFit: "cover" }}
+            sx={{ objectFit: "contain" }}
           />
         </Grid>
       </Grid>
