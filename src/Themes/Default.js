@@ -4,6 +4,9 @@ import "@fontsource/merienda";
 
 const theme = createTheme({
   palette: {
+    white: {
+      main: "#FFFFFF",
+    },
     primary: {
       main: "#4B4DED",
     },
@@ -11,7 +14,7 @@ const theme = createTheme({
       main: "#ED489E",
     },
     background: {
-      default: "#F3D9DA",
+      default: "#ffffff",
     },
     peach: {
       main: "#F3D9DA",
@@ -57,4 +60,5 @@ const theme = createTheme({
     },
   },
 });
+
 export default theme;

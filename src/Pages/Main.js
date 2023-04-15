@@ -5,12 +5,17 @@ import Image from "../Components/Image";
 import CodeIllustrator from "../Assets/Images/code-illustrator.svg";
 import { technologies } from "../Utils/Technologies";
 import { shuffleArray } from "../Utils/Arrays";
+import { useTheme } from "@mui/material/styles";
 
 import { Helmet } from "react-helmet-async";
 
 const Main = () => {
+  const theme = useTheme();
+
   const Hero = () => (
-    <Box mt={6.75}>
+    <Box
+      sx={{ marginTop: 6.75, [theme.breakpoints.down("md")]: { marginTop: 1 } }}
+    >
       <Grid container spacing={2}>
         <Grid item xl={6} lg={6}>
           <Typography variant="h1" sx={{ fontWeight: "bold" }} gutterBottom>
@@ -18,7 +23,11 @@ const Main = () => {
             <Typography
               component="span"
               color="primary.main"
-              sx={{ fontFamily: "merienda", fontSize: 64 }}
+              sx={{
+                fontFamily: "merienda",
+                fontSize: 64,
+                [theme.breakpoints.down("md")]: { fontSize: 36 },
+              }}
             >
               robust{" "}
             </Typography>
@@ -26,7 +35,11 @@ const Main = () => {
             <Typography
               component="span"
               color="secondary.main"
-              sx={{ fontFamily: "merienda", fontSize: 64 }}
+              sx={{
+                fontFamily: "merienda",
+                fontSize: 64,
+                [theme.breakpoints.down("md")]: { fontSize: 36 },
+              }}
             >
               scalable
             </Typography>{" "}
