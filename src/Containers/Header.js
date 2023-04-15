@@ -29,12 +29,30 @@ const drawerWidth = 240;
 const Header = () => {
   const theme = useTheme();
   const pages = [
-    "Home",
-    "About Me",
-    "Services",
-    "Content",
-    "Projects",
-    "Skills",
+    {
+      name: "Home",
+      url: "/",
+    },
+    {
+      name: "About Me",
+      url: "/about",
+    },
+    {
+      name: "Services",
+      url: "/services",
+    },
+    {
+      name: "Content",
+      url: "/content",
+    },
+    {
+      name: "Projects",
+      url: "/projects",
+    },
+    {
+      name: "Skills",
+      url: "/skills",
+    },
   ];
 
   const [value, setValue] = useState(0);
@@ -67,7 +85,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Link href="/" sx={{ display: { xs: "none", lg: "flex" } }}>
-            <Image src={Logo} width="inherit" alt="Alex Gitari" />
+            <Image src={Logo} alt="Alex Gitari" />
           </Link>
           <Box
             sx={{
@@ -77,11 +95,11 @@ const Header = () => {
             }}
           >
             <Tabs value={value} onChange={handleChange} centered>
-              {pages.map((page) => (
+              {pages.map((page, index) => (
                 <NavLinkItem
-                  key={page}
-                  label={page}
-                  href="/"
+                  key={index}
+                  label={page.name}
+                  href={`${page.url}`}
                   sx={{
                     mx: theme.spacing(2),
                     color: "text.primary",
@@ -94,7 +112,11 @@ const Header = () => {
           <Box sx={{ display: { xs: "flex", lg: "none" }, flexGrow: 1 }}></Box>
           <Box sx={{ display: { xs: "flex", lg: "none" }, flexGrow: 0 }}>
             <Link href="/">
-              <Image src={MobileTabletLogo} alt="Alex Gitari" width={30} />
+              <Image
+                src={MobileTabletLogo}
+                alt="Alex Gitari"
+                sx={{ maxWidth: 30 }}
+              />
             </Link>
           </Box>
           <Box sx={{ display: { xs: "none", lg: "flex" }, flexGrow: 0 }}>
@@ -117,9 +139,9 @@ const Header = () => {
             },
           }}
         >
-          <Box sx={{ textAlign: "center" }}>
+          <Box sx={{ paddingY: 1, paddingX: 2 }}>
             <Link href="/">
-              <Image src={Logo} width="inherit" alt="Alex Gitari" />
+              <Image src={Logo} alt="Alex Gitari" sx={{ maxWidth: 100 }} />
             </Link>
           </Box>
 
@@ -127,8 +149,8 @@ const Header = () => {
           <List>
             {pages.map((page, index) => (
               <ListItem key={index} disablePadding>
-                <ListItemButton>
-                  <ListItemText primary={page} />
+                <ListItemButton component="a" href={`${page.url}`}>
+                  <ListItemText primary={page.name} />
                 </ListItemButton>
               </ListItem>
             ))}

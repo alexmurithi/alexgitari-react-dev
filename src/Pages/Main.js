@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Typography, Link } from "@mui/material";
+import { Box, Grid, Typography, Link, useMediaQuery } from "@mui/material";
 import ContainedButton from "../Components/Button/ContainedButton";
 import Image from "../Components/Image";
 import CodeIllustrator from "../Assets/Images/code-illustrator.svg";
@@ -11,58 +11,76 @@ import { Helmet } from "react-helmet-async";
 
 const Main = () => {
   const theme = useTheme();
-
+  const isMobileTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const Hero = () => (
-    <Box
-      sx={{ marginTop: 6.75, [theme.breakpoints.down("md")]: { marginTop: 1 } }}
-    >
-      <Grid container spacing={2}>
-        <Grid item xl={6} lg={6}>
-          <Typography variant="h1" sx={{ fontWeight: "bold" }} gutterBottom>
+    <Box sx={{ marginY: 4, [theme.breakpoints.down("md")]: { marginY: 2 } }}>
+      <Grid
+        container
+        direction={isMobileTablet ? "column-reverse" : "row"}
+        rowSpacing={isMobileTablet ? 2 : 0}
+      >
+        <Grid
+          item
+          xs={12}
+          lg={6}
+          sx={{ [theme.breakpoints.down("md")]: { textAlign: "center" } }}
+        >
+          <Typography
+            component="div"
+            variant="h1"
+            sx={{
+              fontWeight: "bold",
+              [theme.breakpoints.down("md")]: { fontSize: 24, mb: 4 },
+            }}
+            gutterBottom
+          >
             Building{" "}
             <Typography
-              component="span"
+              variant="span"
               color="primary.main"
-              sx={{
-                fontFamily: "merienda",
-                fontSize: 64,
-                [theme.breakpoints.down("md")]: { fontSize: 36 },
-              }}
+              sx={{ fontFamily: "merienda" }}
             >
-              robust{" "}
-            </Typography>
+              robust
+            </Typography>{" "}
             &{" "}
             <Typography
-              component="span"
+              variant="span"
               color="secondary.main"
-              sx={{
-                fontFamily: "merienda",
-                fontSize: 64,
-                [theme.breakpoints.down("md")]: { fontSize: 36 },
-              }}
+              sx={{ fontFamily: "merienda" }}
             >
               scalable
             </Typography>{" "}
             digital products.
           </Typography>
-          <Typography gutterBottom>
+
+          <Typography
+            gutterBottom
+            color="text.secondary"
+            sx={{ [theme.breakpoints.down("md")]: { fontSize: 13 } }}
+          >
             I seek to deliver well designed and orchestrated digital products,
             built with modern technologies that will meet overall business needs
             .
           </Typography>
           <ContainedButton
             color="secondary"
-            sx={{ width: 179, height: 52, mt: 4 }}
+            sx={{
+              width: 179,
+              height: 52,
+              mt: 4,
+              [theme.breakpoints.down("md")]: { width: "100%" },
+            }}
           >
             Hire me
           </ContainedButton>
         </Grid>
-        <Grid item xl={6} lg={6}>
+        <Grid item xs={12} lg={6} sx={{ textAlign: "center" }}>
           <Image
             src={CodeIllustrator}
             alt="Code Illustrator"
-            height="100%"
-            sx={{ objectFit: "contain" }}
+            sx={{
+              maxWidth: 420,
+            }}
           />
         </Grid>
       </Grid>
@@ -79,7 +97,7 @@ const Main = () => {
         ></meta>
       </Helmet>
       <Hero />
-      <Box sx={{ mt: 4 }}>
+      <Box sx={{ mt: 4, display: { xs: "none", lg: "flex" } }}>
         <Grid container spacing={1}>
           {shuffleArray(technologies).map((technology) => (
             <Grid item lg={2} key={technology.name}>
@@ -87,7 +105,7 @@ const Main = () => {
                 <Image
                   src={technology.src !== "" ? technology.src : "/"}
                   alt={technology.name}
-                  width={100}
+                  sx={{ maxWidth: 100 }}
                 />
               </Link>
             </Grid>

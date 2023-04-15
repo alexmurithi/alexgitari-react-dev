@@ -26,6 +26,12 @@ const theme = createTheme({
     h1: {
       fontSize: 64,
     },
+    body1: {
+      fontSize: 15,
+    },
+    body2: {
+      fontSize: 14,
+    },
   },
   components: {
     MuiButton: {
@@ -37,6 +43,13 @@ const theme = createTheme({
           textTransform: "none",
           borderRadius: 0,
           fontWeight: "bold",
+        },
+      },
+    },
+    MuiListItemText: {
+      defaultProps: {
+        primaryTypographyProps: {
+          fontSize: 16,
         },
       },
     },
