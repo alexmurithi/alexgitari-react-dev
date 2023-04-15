@@ -88,10 +88,13 @@ const Main = () => {
   return (
     <Box>
       <Helmet>
-        <title>Alex Gitari</title>
+        <title>Alex Gitari | Home</title>
+        <link rel="canonical" href="/"></link>
         <meta
           name="description"
-          content="Building robust & scalable digital products."
+          content="I seek to deliver well designed and orchestrated digital products,
+            built with modern technologies that will meet overall business needs
+            ."
         ></meta>
       </Helmet>
       <Hero />
