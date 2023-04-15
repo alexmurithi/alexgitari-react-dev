@@ -13,24 +13,19 @@ const Main = () => {
   const theme = useTheme();
   const isMobileTablet = useMediaQuery((theme) => theme.breakpoints.down("md"));
   const Hero = () => (
-    <Box sx={{ marginY: 4, [theme.breakpoints.down("md")]: { marginY: 2 } }}>
+    <Box sx={{ marginY: 3, [theme.breakpoints.down("md")]: { marginY: 1.5 } }}>
       <Grid
         container
         direction={isMobileTablet ? "column-reverse" : "row"}
         rowSpacing={isMobileTablet ? 2 : 0}
       >
-        <Grid
-          item
-          xs={12}
-          lg={6}
-          sx={{ [theme.breakpoints.down("md")]: { textAlign: "center" } }}
-        >
+        <Grid item xs={12} lg={6}>
           <Typography
             component="div"
             variant="h1"
             sx={{
               fontWeight: "bold",
-              [theme.breakpoints.down("md")]: { fontSize: 24, mb: 4 },
+              [theme.breakpoints.down("md")]: { fontSize: 24, marginY: 2 },
             }}
             gutterBottom
           >
@@ -56,7 +51,10 @@ const Main = () => {
           <Typography
             gutterBottom
             color="text.secondary"
-            sx={{ [theme.breakpoints.down("md")]: { fontSize: 13 } }}
+            sx={{
+              marginY: 2,
+              [theme.breakpoints.down("md")]: { fontSize: 12, marginY: 1 },
+            }}
           >
             I seek to deliver well designed and orchestrated digital products,
             built with modern technologies that will meet overall business needs
@@ -67,8 +65,8 @@ const Main = () => {
             sx={{
               width: 179,
               height: 52,
-              mt: 4,
-              [theme.breakpoints.down("md")]: { width: "100%" },
+              marginY: 4,
+              [theme.breakpoints.down("md")]: { width: "100%", marginY: 2 },
             }}
           >
             Hire me
