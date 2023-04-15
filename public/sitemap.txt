@@ -1,6 +1,1 @@
 https://alexgitari-react-dev.guru/#/
-https://alexgitari-react-dev.guru/#/services
-https://alexgitari-react-dev.guru/#/about
-https://alexgitari-react-dev.guru/#/skills
-https://alexgitari-react-dev.guru/#/projects
-https://alexgitari-react-dev.guru/#/content
