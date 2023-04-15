@@ -95,7 +95,13 @@ const Main = () => {
           content="I seek to deliver well designed and orchestrated digital products,
             built with modern technologies that will meet overall business needs
             ."
-        ></meta>
+          data-react-helmet="true"
+        />
+        <meta
+          name="keywords"
+          data-react-helmet="true"
+          content="Alex Gitari,Alex Gitari Murithi,Software Engineer,Software Developer,Engineer,React Developer,MERN Developer,Laravel Developer,FullStack Developer,FrontEnd Developer,BackEnd Developer"
+        />
       </Helmet>
       <Hero />
       <Box sx={{ mt: 4, display: { xs: "none", lg: "flex" } }}>
